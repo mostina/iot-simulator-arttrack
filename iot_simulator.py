@@ -28,7 +28,7 @@ def send_data(data):
     try:
         response = requests.post(API_URL, json=data, timeout=5)
         if response.status_code == 200:
-            print(f"✅ Updated {data['_id']} successfully.")
+            print(f"✅ Updated {data['id']} successfully.")
         else:
             print(f"⚠️ Server response {response.status_code}: {response.text}")
     except Exception as e:
