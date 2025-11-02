@@ -4,7 +4,7 @@ import requests
 from datetime import datetime
 
 # 🔗 URL del tuo endpoint FastAPI (cambialo con il tuo vero indirizzo)
-API_URL = "https://museofastapi.onrender.com/artworks_tracking/update"
+API_URL = "https://museofastapi.onrender.com/iot-date/update"
 
 # 🔹 Lista delle opere (stessi ID della collezione artworks)
 ARTWORK_IDS = [
