@@ -3,6 +3,7 @@ import random
 import requests
 from datetime import datetime
 
+
 # 🔗 URL del tuo endpoint FastAPI (cambialo con il tuo vero indirizzo)
 API_URL = "https://museofastapi.onrender.com/iot-data/update"
 
@@ -13,9 +14,8 @@ ARTWORK_IDS = [
 ]
 
 def generate_data(artwork_id):
-    """Genera dati simulati per una singola opera."""
     return {
-        "_id": artwork_id,
+        "id": artwork_id,  # <- qui invece di "_id"
         "latitude": round(43.5 + random.uniform(-0.5, 0.5), 6),
         "longitude": round(10.4 + random.uniform(-0.5, 0.5), 6),
         "temperature": round(random.uniform(18.0, 26.0), 2),
