@@ -2,7 +2,7 @@ name: IoT Data Sender
 
 on:
   schedule:
-    - cron: "*/10 * * * *"  # ogni 10 minuti
+    - cron: "*/30 * * * *"  # ogni 10 minuti
   workflow_dispatch:  # permette anche esecuzione manuale
 
 jobs:
