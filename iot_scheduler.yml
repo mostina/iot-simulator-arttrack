@@ -1,0 +1,26 @@
+name: IoT Data Sender
+
+on:
+  schedule:
+    - cron: "*/10 * * * *"  # ogni 10 minuti
+  workflow_dispatch:  # permette anche esecuzione manuale
+
+jobs:
+  send_iot_data:
+    runs-on: ubuntu-latest
+    env:
+      API_URL: ${{ https://museofastapi.onrender.com/iot-data/update }}  # URL del tuo FastAPI
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Run IoT simulator
+        run: python iot_simulator.py
