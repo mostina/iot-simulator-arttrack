@@ -5,7 +5,7 @@ from datetime import datetime, timezone, timedelta
 
 
 # 🔗 URL  endpoint FastAPI 
-API_URL = "https://museofastapi.onrender.com/iot-data/update"
+API_URL = os.environ.get("API_URL") 
 
 # 🔹 ArtWorks ID (the same as the ones in artworks db)
 ARTWORK_IDS = [
@@ -43,10 +43,9 @@ def send_data(data):
 
 if __name__ == "__main__":
     print(" IoT simulator started. Sending data every 60 seconds...")
-    while True:
-        for artwork_id in ARTWORK_IDS:
+    for artwork_id in ARTWORK_IDS:
             data = generate_data(artwork_id)
             print("Sending:", data)
             send_data(data)
             time.sleep(5)  #  delay between artworks
-        time.sleep(60)  # wait 60s before re do it 
+       
